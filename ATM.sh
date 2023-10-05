@@ -32,6 +32,18 @@ function withdraw(){
 	fi
 }
 function main_menu(){
+	if [[ ( $hour -ge 4 && $hour -lt 12 ) ]];
+	then
+		echo "good morning"
+	elif [[ ( $hour -ge 12 && $hour -le 16 ) ]];
+	then
+		echo "good afternoon"
+	elif [[ ( $hour -gt 16 && $hour -le 20 ) ]];
+	then
+		echo "good evening"
+	else
+		echo "good night"
+	fi
 	echo "1. check_balance"
 	echo "2. deposit"
 	echo "3. withdraw"
