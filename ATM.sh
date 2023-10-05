@@ -1,7 +1,8 @@
 #!/bin/bash
 balance=1000
 pin=1234
-hour=$(date +%H)
+hour=$(date +"%H")
+current_time=$(TZ='Asia/Kolkata' date +"%T")
 function check_balance(){
 	echo "your balance is $balance"
 }
@@ -32,17 +33,17 @@ function withdraw(){
 	fi
 }
 function main_menu(){
-	if [[ ( $hour -ge 4 && $hour -lt 12 ) ]];
+	if [[ ( $hour -ge 0 && $hour -lt 12 ) ]];
 	then
-		echo "good morning"
-	elif [[ ( $hour -ge 12 && $hour -le 16 ) ]];
+		echo "good morning and time is $current_time"
+	elif [[ ( $hour -ge 12 && $hour -le 17 ) ]];
 	then
-		echo "good afternoon"
-	elif [[ ( $hour -gt 16 && $hour -le 20 ) ]];
+		echo "good afternoon and time is $current_time"
+	elif [[ ( $hour -gt 17 && $hour -lt 20 ) ]];
 	then
-		echo "good evening"
+		echo "good evening and time is $current_time"
 	else
-		echo "good night"
+		echo "good night and time is $current_time"
 	fi
 	echo "1. check_balance"
 	echo "2. deposit"
