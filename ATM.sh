@@ -2,7 +2,6 @@
 balance=1000
 pin=1234
 hour=$(date +"%H")
-current_time=$(TZ='Asia/Kolkata' date +"%T")
 function check_balance(){
 	echo "your balance is $balance"
 }
