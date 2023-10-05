@@ -1,6 +1,7 @@
 #!/bin/bash
 balance=1000
 pin=1234
+hour=$(date +%H)
 function check_balance(){
 	echo "your balance is $balance"
 }
